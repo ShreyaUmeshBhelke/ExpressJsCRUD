@@ -4,7 +4,7 @@ const port = 3000;
 
 app.use(express.json());
 
-let tasks = []; // Store tasks as objects [{ id: 1, name: "Task 1" }, { id: 2, name: "Task 2" }]
+let tasks = [];
 
 // GET all tasks
 app.get('/tasks', (req, res) => {
@@ -40,7 +40,7 @@ app.delete('/task/:id', (req, res) => {
     res.status(200).json({ msg: "Task deleted successfully" });
 });
 
-// PUT (Update) a task by ID
+// PUT a task by ID
 app.put('/task/:id', (req, res) => {
     const taskId = parseInt(req.params.id);
     const { task: updatedTaskName } = req.body;
